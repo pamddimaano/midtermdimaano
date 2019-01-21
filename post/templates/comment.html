@@ -1,0 +1,17 @@
+{% extends 'base.html' %}'
+
+{% block head %}
+	CREATE COMMENT
+{% endblock %}
+
+{% block body %}
+<form action="{% url 'post:comment' %}" method="POST">
+	{% csrf_token %}
+	{% for field in form %}
+	{{ field.errors }}
+		{{ field.label }} {{ field }}
+	{% endfor %} <br/><br/>
+	<input type="submit" value="Create Comment"> <br/><br/>
+	<a href="{% url 'post:index' %}"><input type="submit" value="Return"> </a>
+</form>
+{% endblock %}

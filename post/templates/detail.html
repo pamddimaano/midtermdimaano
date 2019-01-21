@@ -1,0 +1,12 @@
+{% extends 'base.html' %}'
+
+{% block head %}
+	DETAILS
+{% endblock %}
+
+{% block body %}
+	Title: {{ post.title }} <br />
+	Date Created: {{ post.date_created }} <br />
+	Date Updated: {{ post.date_updated }} <br /><br />
+	Content: <br/> {{ post.content }} 
+{% endblock %}
